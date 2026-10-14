@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlantGuard | Settings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="settings">
+
+<!-- Icons used more than once -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M12 3 2 12h3v8h5v-5h4v5h5v-8h3z"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M12 22a2.500 2.500 0 0 0 2.500-2.500h-5A2.500 2.500 0 0 0 12 22zm7-6v-5a7 7 0 0 0-5-6.700V3a2 2 0 0 0-4 0v1.300A7 7 0 0 0 5 11v5l-2 2v1h18v-1z"/><circle cx="6" cy="4.500" r="2.200" fill="#ff3b30"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.500" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="3.500 3.100"/><circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="2.400"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><path d="M12 2a10 9 0 1 0 0 18l5 3v-4.500A9 9 0 0 0 12 2z"/><path d="M11 7h2v2h-2zm0 3.500h2V16h-2z" fill="#4d6b32"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.600 10.800c1.400 2.800 3.800 5.100 6.600 6.600l2.200-2.200c.3-.3.7-.4 1-.2 1.100.4 2.300.6 3.600.6.600 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.600 21 3 13.400 3 4c0-.6.4-1 1-1h3.500c.6 0 1 .4 1 1 0 1.200.2 2.400.6 3.600.1.400 0 .7-.3 1z"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="m7 12 3.500 3.500L17 8.500" fill="none" stroke="#4d6b32" stroke-width="2.400"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 40 44"><path d="M20 2 4 8v14c0 11 7 18 16 21 9-3 16-10 16-21V8z" fill="#2f6b2a" stroke="#8bc34a" stroke-width="2"/><path d="M20 36V18m0 6c-6 0-9-4-9-8 6 0 9 3 9 8zm0 3c5 0 8-3 8-7-5 0-8 3-8 7z" fill="none" stroke="#c6f27a" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></symbol>
+  <symbol id="i-batt" viewBox="0 0 24 24"><rect x="7" y="4.500" width="10" height="17" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="10" y="2" width="4" height="2.500"/></symbol>
+  <symbol id="i-battfull" viewBox="0 0 24 24"><rect x="7" y="4.500" width="10" height="17" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="10" y="2" width="4" height="2.500"/><rect x="9.500" y="8" width="5" height="11"/></symbol>
+  <symbol id="i-stack" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 9.500c0 3.500 16 3.500 16 0v4c0 3.500-16 3.500-16 0zm0 6c0 3.500 16 3.500 16 0v3c0 3.500-16 3.500-16 0z"/></symbol>
+  <symbol id="i-health" viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.500 9 8 11 4.500-2 8-6 8-11V5z"/><path d="M11 7h2v3h3v2h-3v3h-2v-3H8v-2h3z" fill="#e9e9e9"/></symbol>
+  <symbol id="i-solar" viewBox="0 0 24 24"><path d="M12 3a4 4 0 0 1 4 4H8a4 4 0 0 1 4-4zM3 6l2 1.500M21 6l-2 1.500M12 0v1.500" stroke="currentColor" stroke-width="1.500" fill="none"/><path d="M5 21l2.500-9h9L19 21zM8 15.500h8M12 12v9" stroke="#0f7a0a" stroke-width="1.400" fill="currentColor"/></symbol>
+  <symbol id="i-out" viewBox="0 0 24 24"><path d="M4 4h9v3H7v10h6v3H4z"/><path d="m14 8 5 4-5 4v-3H9v-2h5z"/></symbol>
+</svg>
+
+<!-- ========== Sidebar ========== -->
+<aside class="sidebar">
+  <div class="logo">
+    <svg viewBox="0 0 40 44" width="36" height="40" aria-hidden="true"><path d="M20 2 4 8v14c0 11 7 18 16 21 9-3 16-10 16-21V8z" fill="#2f6b2a" stroke="#8bc34a" stroke-width="2"/><path d="M20 36V18m0 6c-6 0-9-4-9-8 6 0 9 3 9 8zm0 3c5 0 8-3 8-7-5 0-8 3-8 7z" fill="none" stroke="#c6f27a" stroke-width="2" stroke-linecap="round"/></svg>
+    <span><b>Plant</b>Guard</span>
+  </div>
+  <nav class="menu">
+    <a href="dashboard.html"><svg fill="currentColor"><use href="#i-home"/></svg>Dashboard</a>
+    <a href="#" data-popup="notifications"><svg fill="currentColor"><use href="#i-bell"/></svg>Notifications</a>
+    <a href="settings.html" class="active"><svg fill="currentColor"><use href="#i-gear"/></svg>Settings</a>
+    <a href="#" data-popup="about"><svg fill="currentColor"><use href="#i-info"/></svg>About</a>
+    <a href="#" data-popup="contact"><svg fill="currentColor"><use href="#i-phone"/></svg>Contact</a>
+    <a href="history.html"><svg fill="currentColor"><use href="#i-list"/></svg>History Data</a>
+  </nav>
+  <a class="logout" href="index.html"><svg fill="currentColor"><use href="#i-out"/></svg>Log Out</a>
+</aside>
+
+<!-- ========== Top bar ========== -->
+<header class="topbar">
+  <div class="search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.200" stroke-linecap="round"><circle cx="10" cy="10" r="6.500"/><path d="m15 15 5 5"/></svg>
+    <span>September 30, 2026</span>
+  </div>
+  <button type="button" class="avatar" data-popup="profile" aria-label="Open profile"><img src="images/avatar.png" alt=""></button>
+</header>
+
+<div class="page">
+<main>
+
+  <section class="settings-head"><h1>Settings</h1><span class="view-only">View only</span></section>
+
+  <!-- Automatic watering -->
+  <section class="sc">
+    <div class="sc-head"><span class="sc-ic">💧</span><div><h2>Automatic Watering</h2><p>View your automatic watering settings below</p></div></div>
+    <div class="rows narrow">
+      <div class="row"><span class="lab">Status</span><span class="val enabled">Enabled</span></div>
+      <div class="row"><span class="lab">Water when soil moisture falls below</span><span class="val ">30%</span></div>
+      <div class="row"><span class="lab">Pump duration</span><span class="val ">5 seconds</span></div>
+      <div class="row"><span class="lab">Cooldown time</span><span class="val ">30 minutes</span></div>
+      <div class="row"><span class="lab">Last watered</span><span class="val ">Today, 8:00am</span></div>
+    </div>
+    <p class="note-box"><i>i</i>Watering settings can only be changed in the PlantGuard mobile app.</p>
+  </section>
+
+  <!-- Solar panel -->
+  <section class="sc">
+    <div class="sc-head"><span class="sc-ic"><svg fill="currentColor"><use href="#i-solar"/></svg></span><h2>Solar Panel</h2></div>
+    <div class="split">
+      <div class="art-col">
+        <svg viewBox="0 0 270 200" width="270" height="200" aria-hidden="true">
+          <defs><linearGradient id="pv2" x1="0" x2="1"><stop offset="0" stop-color="#2d6cb5"/><stop offset="1" stop-color="#4a8fd8"/></linearGradient></defs>
+          <path d="M62 120 38 196M190 100l-22 76M118 112l-14 68" stroke="#3a7ccc" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <polygon points="4,18 160,0 262,104 78,128" fill="url(#pv2)" stroke="#2f6fbf" stroke-width="7" stroke-linejoin="round"/>
+          <path d="M40 14 118 120M82 8l82 104M122 4l82 102M18 52l205 -26M34 88l196-25" stroke="#1f4f96" stroke-width="2.500" fill="none" opacity=".7"/>
+        </svg>
+        <p class="status-line"><i class="dot"></i>Operating Normally</p>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="lab">System Status</span><span class="val small"><i class="dot"></i>Operating Normally</span></div>
+        <div class="row"><span class="lab">Panel Capacity</span><span class="val ">2.0 kW</span></div>
+        <div class="row"><span class="lab"><svg><use href="#i-bolt"/></svg>Current Output</span><span class="val ">1.85 kW</span></div>
+        <div class="row"><span class="lab"><svg><use href="#i-gear"/></svg>System Efficiency</span><span class="val ">92%</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Battery -->
+  <section class="sc">
+    <div class="sc-head"><span class="sc-ic"><svg fill="currentColor"><use href="#i-bolt"/></svg></span><h2>Battery</h2></div>
+    <div class="split">
+      <div class="art-col">
+        <svg viewBox="0 0 100 130" width="130" height="170" aria-hidden="true">
+          <rect x="34" y="2" width="32" height="12" rx="5" fill="#4cd44a"/><rect x="4" y="10" width="92" height="118" rx="14" fill="#4cd44a"/>
+          <rect x="12" y="18" width="76" height="22" rx="4" fill="#d9f6d8"/>
+          <path d="M58 52 34 92h18l-6 26 28-44H55z" fill="none" stroke="#e9fbe8" stroke-width="3.500" stroke-linejoin="round"/>
+        </svg>
+        <p class="pct">78%</p>
+        <div class="bar thick" style="--w:70%"><i></i></div>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="lab"><svg><use href="#i-batt"/></svg>Battery Status</span><span class="val ">Normal</span></div>
+        <div class="row"><span class="lab"><svg><use href="#i-battfull"/></svg>Battery Level</span><span class="val ">78%</span></div>
+        <div class="row"><span class="lab"><svg><use href="#i-stack"/></svg>Battery Capacity</span><span class="val ">10 kWh</span></div>
+        <div class="row"><span class="lab"><svg><use href="#i-bolt"/></svg>Charging Status</span><span class="val ">Charging</span></div>
+        <div class="row"><span class="lab"><svg><use href="#i-health"/></svg>Battery Health</span><span class="val ">Normal</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========== Footer ========== -->
+<footer class="footer">
+  <div class="f-top">
+    <div class="f-brand">
+      <span class="f-logo"><svg viewBox="0 0 40 44" width="28" height="32" aria-hidden="true"><path d="M20 2 4 8v14c0 11 7 18 16 21 9-3 16-10 16-21V8z" fill="#2f6b2a" stroke="#8bc34a" stroke-width="2"/><path d="M20 36V18m0 6c-6 0-9-4-9-8 6 0 9 3 9 8zm0 3c5 0 8-3 8-7-5 0-8 3-8 7z" fill="none" stroke="#c6f27a" stroke-width="2" stroke-linecap="round"/></svg><b>Plant</b>Guard</span>
+      <p>PlantGuard is a smart plant monitoring system designed to help users easily monitor and care for their plants anytime, anywhere.</p>
+    </div>
+    <div class="f-cols">
+      <div><h4>Socials</h4><div class="socials"><a href="#" style="background:#1877f2">f</a><a href="#" style="background:linear-gradient(45deg,#fd5949,#d6249f,#285aeb)">◎</a><a href="#" style="background:#2aa3e0">➤</a></div></div>
+      <div><h4>Quick Links</h4><a href="#">Home</a><a href="#">About</a><a href="#">Contact</a></div>
+      <div><h4>Terms &amp; Conditions</h4></div>
+    </div>
+  </div>
+  <hr>
+  <small>© 2026 PlantGuard. All rights reserved</small>
+</footer>
+</div>
+
+<!-- ========== Pop-ups: opened from the menu or the profile picture, closed with their X / arrow / dark background / Esc ========== -->
+
+<div class="overlay" id="notifications" hidden>
+  <section class="notes" role="dialog" aria-modal="true" aria-labelledby="notes-title">
+    <button class="close" type="button" data-close aria-label="Close notifications">✕</button>
+    <h2 id="notes-title">Notification</h2>
+    <article class="note"><span class="av"><svg width="22" height="24"><use href="#i-shield"/></svg></span><div><b>🌱 Your Plants Are Thirsty</b><p>Soil moisture is getting low. Consider watering your plants.</p><small>8:00 AM</small></div></article>
+    <article class="note"><span class="av"><svg width="22" height="24"><use href="#i-shield"/></svg></span><div><b>💧 Watering Started</b><p>Plant Guard is watering your garden now.</p><small>8:00 AM</small></div></article>
+    <article class="note"><span class="av"><svg width="22" height="24"><use href="#i-shield"/></svg></span><div><b>✨ Watering Complete</b><p>Your plants have been watered successfully.</p><small>8:00 AM</small></div></article>
+    <article class="note"><span class="av"><svg width="22" height="24"><use href="#i-shield"/></svg></span><div><b>✅ Schedule Updated</b><p>Your watering schedule has been successfully updated.</p><small>10:00 AM</small></div></article>
+    <p class="group">Last Weekend</p>
+    <article class="note"><span class="av"><svg width="22" height="24"><use href="#i-shield"/></svg></span><div><b>⚠️ Watering Failed</b><p>Plant Guard couldn't complete the scheduled watering. Please check your water supply.</p><small>December 1, 2026 at 7:30 AM</small></div></article>
+    <article class="note"><span class="av"><svg width="22" height="24"><use href="#i-shield"/></svg></span><div><b>💧 Low Water Supply</b><p>Your water tank is running low. Refill it to keep your plants healthy.</p><small>December 2, 2026 at 12:00 AM</small></div></article>
+  </section>
+</div>
+
+<div class="overlay" id="about" hidden>
+  <section class="about" role="dialog" aria-modal="true" aria-labelledby="about-title">
+    <button class="back" type="button" data-close aria-label="Close About Us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 12H8m4-4-4 4 4 4"/></svg></button>
+    <div class="about-logo"><svg width="34" height="38"><use href="#i-shield"/></svg><span><b>Plant</b>Guard</span></div>
+    <h2 id="about-title">About Us</h2>
+    <h3>What is PlantGuard?</h3>
+    <p>PlantGuard is an IOT-based system designed to help users monitor and take care of plants using sensors and an ESP32 microcontroller.</p>
+    <h3>How does the app work?</h3>
+    <p>The system collects information such as soil moisture, temperature, and humidity, then sends that data through the internet to a mobile application and web dashboard.</p>
+    <h3>What can users do in the app?</h3>
+    <p>Users can monitor their plants remotely and receive notifications when the plant needs water. An automatic watering feature can activate a small water pump when the soil becomes too dry.</p>
+  </section>
+</div>
+
+<div class="overlay" id="contact" hidden>
+  <section class="contact" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <h2 id="contact-title">Contact Us</h2>
+    <div class="contact-icons">
+      <a href="#" aria-label="Email" class="gmail">M</a>
+      <a href="#" aria-label="Facebook" class="fb">f</a>
+      <a href="#" aria-label="Phone"><svg viewBox="0 0 24 24" fill="#2fb344"><use href="#i-phone"/></svg></a>
+    </div>
+  </section>
+</div>
+
+<div class="overlay" id="profile" hidden>
+  <section class="profile" role="dialog" aria-modal="true" aria-labelledby="profile-title">
+    <header><h2 id="profile-title">Profile Details</h2><button type="button" data-close aria-label="Close profile">x</button></header>
+    <img src="images/avatar.png" alt="George Amanpulo Sicat">
+    <dl>
+      <div><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="3" fill="#3b7d3b"/><circle cx="12" cy="9" r="3.500" fill="#d9d9d9"/><path d="M5 20c0-4 3-6 7-6s7 2 7 6z" fill="#d9d9d9"/></svg><dt>Username:</dt><dd>George Amanpulo Sicat</dd></div>
+      <div><svg viewBox="0 0 24 24"><path d="M1 4h22v16H1z" fill="#3b7d3b"/><path d="m1 5 11 8 11-8" stroke="#d9d9d9" fill="none" stroke-width="1.600"/></svg><dt>Email:</dt><dd>georgeamanpulo@gmail.com</dd></div>
+      <div><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="5" fill="#3b7d3b"/><path d="M2 22c0-6 4-9 10-9s10 3 10 9z" fill="#3b7d3b"/></svg><dt>User Role:</dt><dd>Viewer (Read Only)</dd></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="#3b7d3b" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M6 12h10m-4-4 4 4-4 4"/></svg><dt>Last Login:</dt><dd>Oct 10, 12:04 PM</dd></div>
+    </dl>
+  </section>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

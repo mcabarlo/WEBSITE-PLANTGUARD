@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PlantGuard smart plant monitoring system.">
+  <title>PlantGuard | Better Care Starts With a Little Attention</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="nav">
+    <a class="brand" href="#" data-goto="hero" aria-label="PlantGuard home">
+      <svg viewBox="0 0 40 44" width="34" height="38" aria-hidden="true">
+        <path d="M20 2 4 8v14c0 11 7 18 16 21 9-3 16-10 16-21V8z" fill="#2f6b2a" stroke="#8bc34a" stroke-width="2"/>
+        <path d="M20 36V18m0 6c-6 0-9-4-9-8 6 0 9 3 9 8zm0 3c5 0 8-3 8-7-5 0-8 3-8 7z" fill="none" stroke="#c6f27a" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span><b>Plant</b>Guard</span>
+    </a>
+    <span class="nav-button" aria-hidden="true">Connect</span>
+  </header>
+
+  <!-- Every .frame is one screen. Click, scroll or swipe to move between them.
+       data-states = how many clicks happen inside the screen before moving on. -->
+  <main class="stage">
+
+    <!-- 1. Hero -->
+    <section class="frame" id="hero">
+      <img class="bg" src="images/bg1.jpg" alt="">
+      <div class="hero-text">
+        <h1>Better Care Starts With a Little Attention</h1>
+        <p>PlantGuard helps you understand what your plants need, so you can give them the right care at the right time.</p>
+      </div>
+      <span class="cue" aria-hidden="true">⌄</span>
+    </section>
+
+    <!-- 2. Title over dark forest -->
+    <section class="frame" id="title">
+      <img class="bg" src="images/bg2.jpg" alt="">
+      <h2>What PlantGuard Monitors</h2>
+    </section>
+
+    <!-- 3. Monitors -->
+    <section class="frame" id="monitors">
+      <div class="panel">
+        <div class="cards">
+          <article class="card">
+            <img src="images/water.png" alt="Watering can pouring water over plants">
+            <h3>Watering</h3>
+            <p>Detect when your plant needs watering and stay on top of its care.</p>
+          </article>
+          <article class="card">
+            <img src="images/humid.png" alt="Water droplets on a green leaf">
+            <h3>Humidity</h3>
+            <p>Detect the humidity level around your plant.</p>
+          </article>
+          <article class="card">
+            <img src="images/temp.png" alt="Thermometer in front of green leaves">
+            <h3>Temperature</h3>
+            <p>Monitor the temperature and know when conditions may affect your plant.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Smart Care (click 1: dark boxes, click 2: boxes slide down and text appears) -->
+    <section class="frame" id="smart" data-states="2">
+      <h2><b>Smart Care</b>, When It Matters</h2>
+      <div class="care-row">
+        <article class="care">
+          <div class="care-top"><span class="icon"><i>💧</i></span><h3>Automatic Watering</h3><div class="device"><span></span></div></div>
+          <i class="plug"></i>
+          <p class="label">Water your plant when the soil becomes too dry.</p>
+        </article>
+        <article class="care">
+          <div class="care-top"><span class="icon"><i>🔔</i></span><h3>Notification</h3><div class="device"><span></span></div></div>
+          <i class="plug"></i>
+          <p class="label">Get notified when your plant needs watering.</p>
+        </article>
+        <article class="care">
+          <div class="care-top"><span class="icon"><i>✓</i></span><h3>Plant Status</h3><div class="device"><span></span></div></div>
+          <i class="plug"></i>
+          <p class="label">Quickly see your plant's current condition.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5. Features (click 1: bubbles appear, click 2: bubbles fly away, then the next screen opens) -->
+    <section class="frame" id="features" data-states="2" data-leave="900">
+      <img class="bg" src="images/bg3.jpg" alt="">
+      <div class="bubbles">
+        <article class="bubble left"><div><strong>Real-Time Data</strong><p>View updated information to better understand your plant's needs.</p></div><span class="bubble-icon blue">📈</span></article>
+        <article class="bubble right"><div><strong>Plant Monitoring</strong><p>Keep track of your plant's condition in one place.</p></div><span class="bubble-icon olive">🌱</span></article>
+        <article class="bubble left"><div><strong>Water Management</strong><p>Monitor water levels and know when your plant needs watering.</p></div><span class="bubble-icon teal">💧</span></article>
+        <article class="bubble right"><div><strong>Healthy Growth</strong><p>Use plant data to support consistent and proper care.</p></div><span class="bubble-icon red">🌡</span></article>
+      </div>
+    </section>
+
+    <!-- 6. Easy to use (click 1: white panel with title, click 2: panel fills the screen and the steps draw) -->
+    <section class="frame" id="easy" data-states="2" data-yellow="1">
+      <div class="sheet">
+        <h2><b>Plant</b>Guard is Easy to Use</h2>
+        <ol class="steps">
+          <li style="--n:0"><p>Place the PlantGuard device in the soil next to your plant.</p><span class="num">1</span><i class="branch"></i></li>
+          <li style="--n:1"><p>Set the solar panel where it gets plenty of sunlight.</p><span class="num">2</span><i class="branch"></i></li>
+          <li style="--n:2"><p>Open the PlantGuard app and tap Connect to pair your device.</p><span class="num">3</span><i class="branch"></i></li>
+          <li style="--n:3"><p>Choose your plant so PlantGuard knows how much water it needs.</p><span class="num">4</span><i class="branch"></i></li>
+          <li style="--n:4"><p>Check live soil moisture, humidity and temperature readings.</p><span class="num">5</span><i class="branch"></i></li>
+          <li style="--n:5"><p>Get notified when it's time to water, or let automatic watering do it for you.</p><span class="num">6</span><i class="branch"></i></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 7. Solar, mobile and footer (click 1: solar peeks in, click 2: solar + mobile, click 3: mobile + footer) -->
+    <section class="frame" id="finale" data-states="3" data-yellow="0">
+      <div class="stack">
+
+        <div class="solar">
+          <img src="images/solarr.png" alt="Solar panel on a pole">
+          <h3>SOLAR-POWERED</h3>
+          <p>PlantGuard harnesses solar energy to power your plant monitoring system efficiently throughout the day. By using clean, renewable energy, it supports continuous monitoring while reducing reliance on traditional power sources.</p>
+        </div>
+
+        <div class="mobile">
+          <img src="images/phonee.png" alt="PlantGuard mobile app showing the My Plant screen">
+          <h3><b>Plant</b>Guard<br><span>Mobile Version</span></h3>
+          <p>PlantGuard Mobile Version is available on mobile, allowing users to monitor plants, receive notifications, and access plant-care information anytime, anywhere.</p>
+        </div>
+
+        <footer class="footer">
+          <div class="footer-brand">
+            <span><b>Plant</b>Guard</span>
+            <p>PlantGuard is a smart plant monitoring system designed to help users easily monitor and care for their plants anytime, anywhere.</p>
+          </div>
+          <div class="footer-columns">
+            <div><h4>Socials</h4><div class="socials"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="Telegram">➤</a></div></div>
+            <div><h4>Quick Links</h4><a href="#" data-goto="hero">Home</a><a href="#" data-goto="features">About</a><a href="#" data-goto="easy">Contact</a></div>
+            <div><h4>Terms &amp; Conditions</h4></div>
+          </div>
+          <hr>
+          <small>© 2026 PlantGuard. All rights reserved.</small>
+        </footer>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Previous / next buttons -->
+  <nav class="arrows" aria-label="Frames">
+    <button type="button" data-dir="-1" aria-label="Previous frame">‹</button>
+    <button type="button" data-dir="1" aria-label="Next frame">›</button>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
